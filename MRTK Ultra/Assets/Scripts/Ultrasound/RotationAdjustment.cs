@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Ultrasound
+namespace Root.Ultrasound
 {
     public class RotationAdjustment : MonoBehaviour
     {
@@ -9,7 +9,7 @@ namespace Ultrasound
         // Start is called before the first frame update
         void Start()
         {
-        
+            
         }
 
         // Update is called once per frame
