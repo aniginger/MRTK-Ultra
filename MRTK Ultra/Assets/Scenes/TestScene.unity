@@ -540,16 +540,32 @@ PrefabInstance:
       value: "\uF606"
       objectReference: {fileID: 0}
     - target: {fileID: 6041587017664386034, guid: c2a4036cbd244524d828230f1bf7c12c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041587017664386034, guid: c2a4036cbd244524d828230f1bf7c12c, type: 3}
       propertyPath: seeItSayItLabel
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041587018007923718, guid: c2a4036cbd244524d828230f1bf7c12c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6041587018007923718, guid: c2a4036cbd244524d828230f1bf7c12c, type: 3}
       propertyPath: seeItSayItLabel
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6041587018942078877, guid: c2a4036cbd244524d828230f1bf7c12c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041587018942078877, guid: c2a4036cbd244524d828230f1bf7c12c, type: 3}
       propertyPath: seeItSayItLabel
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041587019467069331, guid: c2a4036cbd244524d828230f1bf7c12c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6041587019467069331, guid: c2a4036cbd244524d828230f1bf7c12c, type: 3}
       propertyPath: seeItSayItLabel
