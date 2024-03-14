@@ -1,24 +1,32 @@
+using Root.Ultrasound;
 using UnityEngine;
 
 namespace Root.UI
 {
     public class ButtonFunctions : MonoBehaviour
     {
+        private ImageLoader imageLoader;
+        
         // Start is called before the first frame update
         void Start()
         {
-        
+            imageLoader = FindObjectOfType<ImageLoader>();
         }
 
-        // Update is called once per frame
-        void Update()
+        /// <summary>
+        /// Pause the stream of images coming in from the probe
+        /// </summary>
+        public void PauseImaging()
         {
-        
+            imageLoader.isPaused = !imageLoader.isPaused;
         }
 
-        public void ButtonTest()
+        /// <summary>
+        /// Change whether the data path text display is visible
+        /// </summary>
+        public void ToggleDataPathText()
         {
-            Debug.Log("Pressed");
+            imageLoader.dataPathText.enabled = !imageLoader.dataPathText.enabled;
         }
     }
 }

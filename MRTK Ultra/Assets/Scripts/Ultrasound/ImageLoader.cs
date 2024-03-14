@@ -15,7 +15,7 @@ namespace Root.Ultrasound
         [HideInInspector] public bool isPaused = false; // Whether the image should update; hidden in inspector to avoid desync with button functions
 
         [Header("UI")]
-        [SerializeField] TextMeshProUGUI dataPathText;
+        public TextMeshProUGUI dataPathText;
 
         private string dataPath;
         private string filePath;
@@ -34,13 +34,12 @@ namespace Root.Ultrasound
         // Update is called once per frame
         void Update()
         {
-            if (!isPaused)
-            {
-                // Update the image at the specified interval
-                if (!(Time.time - lastUpdateTime > updateInterval)) return;
-                LoadAndDisplayImage();
-                lastUpdateTime = Time.time;
-            }
+            if (isPaused) return;
+            
+            // Update the image at the specified interval
+            if (!(Time.time - lastUpdateTime > updateInterval)) return;
+            LoadAndDisplayImage();
+            lastUpdateTime = Time.time;
         }
 
         /// <summary>
@@ -51,8 +50,8 @@ namespace Root.Ultrasound
             // Get the path to the persistent data folder and the file name of the frame
             dataPath = Application.persistentDataPath;
             filePath = Path.Combine(dataPath, fileName);
-            Debug.Log((filePath));
-            // dataPathText.text = dataPath;
+            Debug.Log(filePath);
+            if (dataPathText != null) dataPathText.text = dataPath;
         }
 
         // ReSharper disable Unity.PerformanceAnalysis

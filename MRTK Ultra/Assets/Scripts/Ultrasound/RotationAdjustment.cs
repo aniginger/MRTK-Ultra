@@ -16,7 +16,7 @@ namespace Root.Ultrasound
         void Update()
         {
             Vector3 eulerAngles = targetTransform.eulerAngles;
-            Vector3 eulerRotation = new Vector3(eulerAngles.x, eulerAngles.y, eulerAngles.z);
+            Vector3 eulerRotation = new(eulerAngles.x, eulerAngles.y, eulerAngles.z);
             transform.rotation = Quaternion.Euler(eulerRotation);
         }
     }
