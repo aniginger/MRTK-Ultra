@@ -17,6 +17,7 @@ namespace Root.Ultrasound
 
         [Header("UI")]
         public TextMeshProUGUI dataPathText;
+        [SerializeField] private TextMeshProUGUI noImageDetectedText;
 
         private string dataPath;
         private string filePath;
@@ -55,6 +56,16 @@ namespace Root.Ultrasound
             if (dataPathText != null) dataPathText.text = dataPath;
         }
 
+        /// <summary>
+        /// Toggle whether the image should be displayed to the user
+        /// </summary>
+        /// <param name="isActive">Whether the imaging is currently active (detecting image feed)</param>
+        private void ToggleImageVisibility(bool isActive)
+        {
+            meshRenderer.enabled = isActive;
+            noImageDetectedText.enabled = !isActive;
+        }
+
         // ReSharper disable Unity.PerformanceAnalysis
         /// <summary>
         /// Finds image from persistent data path and displays it to the plane
@@ -76,12 +87,12 @@ namespace Root.Ultrasound
 
                     // Assign the texture to the RawImage component
                     material.SetTexture(MainTex, texture);
-                    meshRenderer.enabled = true;
+                    ToggleImageVisibility(true);
                 }
                 else
                 {
                     // File path not found
-                    meshRenderer.enabled = false;
+                    ToggleImageVisibility(false);
                 }
             }
             catch

@@ -6,12 +6,14 @@ namespace Root.UI
     public class ButtonFunctions : MonoBehaviour
     {
         private ImageLoader imageLoader;
+        private HandMenuSimulator handMenuSimulator;
         private CameraAdjust cameraAdjust;
         
         // Start is called before the first frame update
         void Start()
         {
             imageLoader = FindObjectOfType<ImageLoader>();
+            handMenuSimulator = FindObjectOfType<HandMenuSimulator>();
             cameraAdjust = FindObjectOfType<CameraAdjust>();
         }
 
@@ -21,6 +23,7 @@ namespace Root.UI
         public void PauseImaging()
         {
             imageLoader.isPaused = !imageLoader.isPaused;
+            handMenuSimulator.imagingPausedText.enabled = imageLoader.isPaused;
         }
 
         /// <summary>
