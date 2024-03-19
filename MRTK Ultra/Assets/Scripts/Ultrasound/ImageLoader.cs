@@ -8,6 +8,7 @@ namespace Root.Ultrasound
     {
         [Header("Components")]
         [SerializeField] private Material material; // Material used by quad
+        [SerializeField] private MeshRenderer meshRenderer; // Image Renderer
 
         [Header("Global Variables")]
         [SerializeField] private string fileName = "currentFrame.jpg"; // Adjust the file name as needed
@@ -75,18 +76,18 @@ namespace Root.Ultrasound
 
                     // Assign the texture to the RawImage component
                     material.SetTexture(MainTex, texture);
-                    // Debug.Log("Updating image");
+                    meshRenderer.enabled = true;
                 }
                 else
                 {
                     // File path not found
-                    Debug.LogWarning("File not found: " + fileName);
+                    meshRenderer.enabled = false;
                 }
             }
             catch
             {
                 // Tried to retrieve file while it was being updated
-                Debug.Log("Frame skipped");
+                // Catching so application does not pause
             }
 
         }
