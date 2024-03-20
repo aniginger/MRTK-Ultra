@@ -6,9 +6,15 @@ namespace Root.Ultrasound
 {
     public class ImageLoader : MonoBehaviour
     {
+        [Header("Initial Position")]
+        [SerializeField] private float initialXPos = 0f;
+        [SerializeField] private float initialYPos = 0f;
+        [SerializeField] private float initialZPos = 2.5f;        
+        
         [Header("Components")]
         [SerializeField] private Material material; // Material used by quad
         [SerializeField] private MeshRenderer meshRenderer; // Image Renderer
+        [SerializeField] private Transform cameraTransform;
 
         [Header("Global Variables")]
         [SerializeField] private string fileName = "currentFrame.jpg"; // Adjust the file name as needed
@@ -28,6 +34,7 @@ namespace Root.Ultrasound
         // Start is called before the first frame update
         void Start()
         {
+            transform.position = new Vector3(initialXPos, initialYPos, initialZPos);
             SetDataPath();
             lastUpdateTime = Time.time;
             LoadAndDisplayImage();
@@ -100,7 +107,15 @@ namespace Root.Ultrasound
                 // Tried to retrieve file while it was being updated
                 // Catching so application does not pause
             }
+        }
 
+        /// <summary>
+        /// Recenter the image to be in the middle of the viewport
+        /// </summary>
+        public void RecenterImage()
+        {
+            Vector3 targetPosition = cameraTransform.position + cameraTransform.forward * initialZPos;
+            transform.position = targetPosition;
         }
     }
 }

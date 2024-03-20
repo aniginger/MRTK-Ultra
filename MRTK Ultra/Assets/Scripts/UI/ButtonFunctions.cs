@@ -35,11 +35,11 @@ namespace Root.UI
         }
 
         /// <summary>
-        /// Recenter the camera to the user's current viewport
+        /// Recenter the image to be in the middle of the viewport
         /// </summary>
-        public void RecenterCamera()
+        public void RecenterImage()
         {
-            cameraAdjust.CenterCamera();
+            imageLoader.RecenterImage();
         }
     }
 }

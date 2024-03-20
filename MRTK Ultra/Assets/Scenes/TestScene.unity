@@ -2209,6 +2209,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 900397058}
     - target: {fileID: 4435260254178383340, guid: 16a1f018e6b545e46a7cd8959c052618, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 2351505566118837508}
+    - target: {fileID: 4435260254178383340, guid: 16a1f018e6b545e46a7cd8959c052618, type: 3}
       propertyPath: noImageDetectedText
       value: 
       objectReference: {fileID: 2125741283}
@@ -2699,6 +2703,34 @@ PrefabInstance:
     - target: {fileID: 1221488492989739659, guid: 8f98bc01df3df8c4c83e884c0508ca6e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770594776496289031, guid: 8f98bc01df3df8c4c83e884c0508ca6e, type: 3}
+      propertyPath: <OnClicked>k__BackingField.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770594776496289031, guid: 8f98bc01df3df8c4c83e884c0508ca6e, type: 3}
+      propertyPath: <OnClicked>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770594776496289031, guid: 8f98bc01df3df8c4c83e884c0508ca6e, type: 3}
+      propertyPath: <OnClicked>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 410576741}
+    - target: {fileID: 2770594776496289031, guid: 8f98bc01df3df8c4c83e884c0508ca6e, type: 3}
+      propertyPath: <OnClicked>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770594776496289031, guid: 8f98bc01df3df8c4c83e884c0508ca6e, type: 3}
+      propertyPath: <OnClicked>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RecenterImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770594776496289031, guid: 8f98bc01df3df8c4c83e884c0508ca6e, type: 3}
+      propertyPath: <OnClicked>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Root.UI.ButtonFunctions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770594776496289031, guid: 8f98bc01df3df8c4c83e884c0508ca6e, type: 3}
+      propertyPath: <OnClicked>k__BackingField.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2789400213835504176, guid: 8f98bc01df3df8c4c83e884c0508ca6e, type: 3}
       propertyPath: m_Name
