@@ -31,15 +31,17 @@ namespace Root.UI
         /// </summary>
         private void SimulateHandPresent()
         {
-            if (Input.GetKeyDown(KeyCode.P)) ToggleCanvas();
+            if (Input.GetKeyDown(KeyCode.P)) ToggleCanvas(true);
         }
+
 
         /// <summary>
         /// Toggle the hand UI canvas on or off depending on the current state
         /// </summary>
-        public void ToggleCanvas()
+        /// <param name="isActive">Whether the menu should be set to be active</param>
+        public void ToggleCanvas(bool isActive)
         {
-            handMenuCanvas.SetActive(!handMenuCanvas.activeSelf);
+            handMenuCanvas.SetActive(isActive);
         }
     }
 }

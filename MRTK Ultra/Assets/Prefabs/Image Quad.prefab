@@ -377,8 +377,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb24be631c67c844aaa6c8ad689cc687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialXPos: 0
+  initialYPos: 0
+  initialZPos: 2
   material: {fileID: 2100000, guid: 78b0064793a46c049927070f74af98cc, type: 2}
   meshRenderer: {fileID: 4280021685035808917}
+  cameraTransform: {fileID: 0}
   fileName: currentFrame.jpg
   updateInterval: 0.1
   isPaused: 0
