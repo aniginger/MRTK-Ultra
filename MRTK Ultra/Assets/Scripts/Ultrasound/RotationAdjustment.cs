@@ -15,13 +15,21 @@ namespace Root.Ultrasound
         // Update is called once per frame
         void Update()
         {
-            if (!isAdjustingRotation) return;
-            
+            if (isAdjustingRotation) RotateTowardCamera();
+        }
+
+        /// <summary>
+        /// Rotate object so it is always facing the camera
+        /// Makes the user feel they are looking at a 2D image instead of a 3D model
+        /// </summary>
+        private void RotateTowardCamera()
+        {
             Vector3 eulerAngles = targetTransform.eulerAngles;
             Vector3 eulerRotation = new(eulerAngles.x, eulerAngles.y, eulerAngles.z);
             
             imageTransform.rotation = Quaternion.Euler(eulerRotation);
-            canvasTransform.rotation = Quaternion.Euler(eulerRotation);
+            // Canvas no longer needs to rotate as it is using a hand menu; uncomment below if needed
+            // canvasTransform.rotation = Quaternion.Euler(eulerRotation);
         }
     }
 }

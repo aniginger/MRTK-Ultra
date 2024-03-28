@@ -1,5 +1,5 @@
 using System.IO;
-using TMPro;
+using Root.UI;
 using UnityEngine;
 
 namespace Root.Ultrasound
@@ -16,14 +16,13 @@ namespace Root.Ultrasound
         [SerializeField] private MeshRenderer meshRenderer; // Image Renderer
         [SerializeField] private Transform cameraTransform;
 
+        [Header("Other Objects")]
+        [SerializeField] private HandMenuSimulator handMenuSimulator;
+
         [Header("Global Variables")]
         [SerializeField] private string fileName = "currentFrame.jpg"; // Adjust the file name as needed
         [SerializeField] private float updateInterval = 0.1f; // Adjust the update interval as needed
         [HideInInspector] public bool isPaused = false; // Whether the image should update; hidden in inspector to avoid desync with button functions
-
-        [Header("UI")]
-        public TextMeshProUGUI dataPathText;
-        [SerializeField] private TextMeshProUGUI noImageDetectedText;
 
         private string dataPath;
         private string filePath;
@@ -60,7 +59,7 @@ namespace Root.Ultrasound
             dataPath = Application.persistentDataPath;
             filePath = Path.Combine(dataPath, fileName);
             Debug.Log(filePath);
-            if (dataPathText != null) dataPathText.text = dataPath;
+            if (handMenuSimulator.dataPathText != null) handMenuSimulator.dataPathText.text = dataPath;
         }
 
         /// <summary>
@@ -70,7 +69,7 @@ namespace Root.Ultrasound
         private void ToggleImageVisibility(bool isActive)
         {
             meshRenderer.enabled = isActive;
-            noImageDetectedText.enabled = !isActive;
+            handMenuSimulator.noImageDetectedText.enabled = !isActive;
         }
 
         // ReSharper disable Unity.PerformanceAnalysis

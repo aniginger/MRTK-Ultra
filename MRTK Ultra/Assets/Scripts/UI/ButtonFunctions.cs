@@ -7,14 +7,12 @@ namespace Root.UI
     {
         private ImageLoader imageLoader;
         private HandMenuSimulator handMenuSimulator;
-        private CameraAdjust cameraAdjust;
         
         // Start is called before the first frame update
         void Start()
         {
             imageLoader = FindObjectOfType<ImageLoader>();
             handMenuSimulator = FindObjectOfType<HandMenuSimulator>();
-            cameraAdjust = FindObjectOfType<CameraAdjust>();
         }
 
         /// <summary>
@@ -24,6 +22,7 @@ namespace Root.UI
         {
             imageLoader.isPaused = !imageLoader.isPaused;
             handMenuSimulator.imagingPausedText.enabled = imageLoader.isPaused;
+            handMenuSimulator.pauseButtonText.text = imageLoader.isPaused ? "Play" : "Pause";
         }
 
         /// <summary>
@@ -31,7 +30,9 @@ namespace Root.UI
         /// </summary>
         public void ToggleDataPathText()
         {
-            imageLoader.dataPathText.enabled = !imageLoader.dataPathText.enabled;
+            handMenuSimulator.dataPathText.enabled = !handMenuSimulator.dataPathText.enabled;
+            handMenuSimulator.showDataPathButtonText.text =
+                handMenuSimulator.dataPathText.isActiveAndEnabled ? "Hide Path" : "Show Path";
         }
 
         /// <summary>

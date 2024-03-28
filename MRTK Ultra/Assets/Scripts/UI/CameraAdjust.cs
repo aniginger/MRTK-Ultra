@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Root.UI
@@ -20,6 +18,7 @@ namespace Root.UI
 
         /// <summary>
         /// Adjust the camera offset to negate the user's viewport
+        /// Currently unused as it could mess up the perspective in mixed reality
         /// </summary>
         public void CenterCamera()
         {
@@ -28,8 +27,9 @@ namespace Root.UI
             Vector3 cameraRotation = cameraTransform.eulerAngles;
 
             // Set the offset to the negative of the camera's position and rotation to mimic 0
+            // Note: Rotation does not work properly
             offsetTransform.position = -cameraPosition;
-            // offsetTransform.rotation = Quaternion.Euler(-cameraRotation);
+            offsetTransform.rotation = Quaternion.Euler(-cameraRotation);
         }
     }
 }
